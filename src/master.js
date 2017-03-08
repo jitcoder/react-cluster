@@ -3,14 +3,27 @@ import 'babel-core/register';
 import 'babel-polyfill';
 
 import workerFarm from 'worker-farm';
+import express from 'express';
 
 const workers = workerFarm(require.resolve('./worker'));
 
-let ret = 0;
 
-for (let i = 0; i < 10; i++) {
-  workers(`#${i } FOO`, (err, outp) => {
-    console.log(outp);
-    if (++ret === 10) workerFarm.end(workers);
-  });
-}
+const app = express();
+
+app.get('products/:id', (req, res) => {
+  res.sendFile(`./public/products/${req.params.id}.html`);
+});
+
+app.get('/generate', (req, res) => {
+  const products = require('./data/products.json');
+  const results = [];
+  for (let i = 0; i < products.length; i++){
+    workers(product, (err, result) => {
+      results.push(result);
+    });
+  }
+
+  res.send(results);
+})
+
+app.listen(3000);

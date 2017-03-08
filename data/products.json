@@ -1,0 +1,34 @@
+[
+  {
+    "id": 51234,
+    "guid": "alien-jerky",
+    "displayName": "Alien Jerky",
+    "pricePerUnit": 12.99,
+    "unitWeight": 12,
+    "description": "New, premium meat cut! Yes, straight from the moon to our store, one of the greatest tasting beef jerkys this side of the milky way!! Fresh, tender strips of BBQ flavored beef jerky!"
+  },
+  {
+    "id": 78392,
+    "guid": "mind-helmet",
+    "displayName": "Mind Helmet",
+    "pricePerUnit": 49.99,
+    "unitWeight": 40,
+    "description": "Never have your mind read again by unwanted snoopers! Just be sure to stretch out your neck, and don't go near any electro-magnets!"
+  },
+  {
+    "id": 93848,
+    "guid": "plasma-canister",
+    "displayName": "Plasma Canister",
+    "pricePerUnit": 20.99,
+    "unitWeight": 5,
+    "description": "Running low on ammo for your plasma weapon? Good think you came to us! We have just what you need!"
+  },
+  {
+    "id": 84928,
+    "guid": "reptillian-repellent",
+    "displayName": "Reptillian Repellent",
+    "pricePerUnit": 15.99,
+    "unitWeight": 9,
+    "description": "Have some nasty Reptillian Shapeshifters staling you? Worried that your best friend might not be human? Just 3 sprays will get you 12 hours of protection from these green ghouls. (WARNING: PRODUCT IS NOT WATER PROOF)"
+  }
+]
