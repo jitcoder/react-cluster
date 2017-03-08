@@ -7,7 +7,7 @@ export default class Sales extends React.Component {
 
   render() {
     return (
-      
+      //render table row
     )
   }
 }

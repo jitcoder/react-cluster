@@ -8,6 +8,7 @@ export default class Product extends React.Component {
   }
 
   render() {
-
+    //for each props.sale
+    // <Sales sale={props.sale[i]} />
   }
 }
