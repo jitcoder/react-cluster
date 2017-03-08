@@ -1,0 +1,10 @@
+doctype html
+html(lang='en')
+  head
+    title #{title}
+    script.
+      window.__INITIAL_STATE__ = !{initialState};
+  body
+    #app
+      !{initialRender}
+    script(src='/public/bundle.js')
