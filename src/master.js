@@ -60,6 +60,20 @@ app.get('/products/:id', (req, res) => {
   } else {
     res.send('uh oh');
   }
+});
+
+app.get('/multi/products/:id', (req, res) => {
+  const product = require('../data/products.json').find(p => p.id === parseInt(req.params.id));
+  if (product) {
+    workers({ product: product }, (err, result) => {
+      if (!err)
+        res.send(result);
+      else
+        res.send(JSON.stringify(err));
+    });
+  } else {
+    res.send('uh oh');
+  }
 })
 
 app.get('/generate', (req, res) => {
@@ -67,7 +81,7 @@ app.get('/generate', (req, res) => {
   let productsProcessed = 0;
 
   for (let i = 0; i < products.length; i++){
-    workers(products[i], (err, result) => {
+    workers({ product: products[i], mode: 'static' }, (err, result) => {
       productsProcessed++;
       if (productsProcessed === products.length) {
         res.send("done!");

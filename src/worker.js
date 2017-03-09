@@ -14,7 +14,7 @@ const template = jade.compileFile(path.resolve(__dirname, '../public/template.ja
 
 
 
-module.exports = (product, callback) => {
+module.exports = ({ product, mode}, callback) => {
   // render <Product id={product.id} sales={ [] of sales }/>
   // put into template with initial state
   // save to /public/products/{id}.html
@@ -27,6 +27,10 @@ module.exports = (product, callback) => {
     initialRender: ReactDOMServer.renderToString(<Product product={product} sales={sales} />)
   }
 
-  fs.writeFileSync(path.resolve(__dirname,`../public/products/${product.id}.html`), template(state));
-  callback(null, `Product ${product.id} complete`);
+  const output = template(state);
+  if (mode === 'static') {
+    fs.writeFileSync(path.resolve(__dirname, `../public/products/${product.id}.html`), output);
+  }
+
+  callback(null, output);
 };
