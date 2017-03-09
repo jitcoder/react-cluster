@@ -8,7 +8,8 @@
     "debug": "node --debug ./dist/master.js",
     "build": "npm run clean && ./node_modules/.bin/babel -d ./dist ./src --source-maps && webpack",
     "clean": "rm -Rf ./dist",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "seed-data": "node scripts/DatabaseSeed/DatabaseSeed.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,8 @@
     "jade": "^1.11.0",
     "md5": "^2.2.1",
     "progress": "^1.1.8",
+    "random-int": "^1.0.0",
+    "random-name": "^0.1.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.79.0",
