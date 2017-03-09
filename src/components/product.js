@@ -12,10 +12,11 @@ export default class Product extends React.Component {
 
     return (
       <div className="product-info">
-        <span>{this.props.product.displayName}</span>
-        <br />
-        <span>{`${this.props.product.pricePerUnit}`}</span>
-        <br />
+        <div className="product-pane">
+          <span>{this.props.product.displayName}</span>
+          <span>{`$${this.props.product.pricePerUnit}`}</span>
+          <span>{this.props.product.description}</span>
+        </div>
         <table>
           <thead>
             <tr>

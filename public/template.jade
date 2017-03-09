@@ -4,6 +4,7 @@ html(lang='en')
     title #{title}
     script.
       window.__INITIAL_STATE__ = !{initialState};
+    link(rel='stylesheet', type='text/css', href='/public/style.css')
   body
     #app
       !{initialRender}

@@ -21797,17 +21797,24 @@ var Product = function (_React$Component) {
         'div',
         { className: 'product-info' },
         _react2.default.createElement(
-          'span',
-          null,
-          this.props.product.displayName
+          'div',
+          { className: 'product-pane' },
+          _react2.default.createElement(
+            'span',
+            null,
+            this.props.product.displayName
+          ),
+          _react2.default.createElement(
+            'span',
+            null,
+            '$' + this.props.product.pricePerUnit
+          ),
+          _react2.default.createElement(
+            'span',
+            null,
+            this.props.product.description
+          )
         ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'span',
-          null,
-          '' + this.props.product.pricePerUnit
-        ),
-        _react2.default.createElement('br', null),
         _react2.default.createElement(
           'table',
           null,
